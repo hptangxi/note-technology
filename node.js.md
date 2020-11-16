@@ -20,20 +20,20 @@
 
 基于node平台开发的前端构建工具，将机械化操作编写成任务。
 
-作用：
+**作用：**
 - 项目上线，HTML、CSS、JS文件压缩合并
 - 语法转换（es6，less...）
 - 公共文件抽离
 - 修改文件浏览器自动刷新
 
-使用：
+**使用：**
 1. 使用`npm install gulp`下载gulp库文件
 2. 在项目根目录下建立gulpfile.js文件
 3. 重构项目的文件夹结构，src目录放置源代码文件，dist目录放置构建后文件
 4. 在gulpfile.js文件中编写任务
 5. 在命令行工具中执行gulp任务
 
-方法：
+**方法：**
 - `gulp.src()` 获取任务要处理的文件
 - `gulp.dest()` 输出文件
 - `gulp.task()` 建立gulp任务
@@ -49,4 +49,14 @@ gulp.task('first', () => {
   .pipe(gulp.dest('./dist/css'))
 })
 ```
+
+**插件：**
+
+- gulp-htmlmin: html文件压缩
+- gulp-csso：压缩css
+- gulp-babel：JavaScript语法转化
+- gulp-less：less语法转化
+- gulp-uglify：压缩混淆JavaScript
+- gulp-file-include：公共文件包含
+- browsersync：浏览器实时同步
 
