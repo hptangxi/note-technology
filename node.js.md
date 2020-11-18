@@ -1,4 +1,11 @@
-### 模块的导出
+<style>
+.h1 {font-size:}
+.img {width:100px;border:1px solid red;}
+</style>
+
+<image class="img" src="./images/星系.png" />
+
+<h3>模块的导出</h3>
 
 `exports.a = a` 与 `module.exports.a = a` 都指向同一个对象，
 `exports = {}` 无效，
@@ -73,4 +80,4 @@ app.on('request', (req, res) => {
 // 监听3000端口
 app.listen(3000)
 console.log('服务器已启动，监听3000端口，请访问localhost:3000')
-```
+``` 
