@@ -4,19 +4,17 @@
 `exports = {}` 无效，
 `module.exports = {}` 优先级最高，将覆盖上面的写法。
 
-### 第三方模块
-
-#### nodemon
+### nodemon
 
 监听文件保存，自动执行修改文件的命令行工具
 
-#### nrm
+### nrm
 
 `nrm ls` 查看npm地址列表
 
 `nrm use taobao` 指定npm使用淘宝地址
 
-#### Gulp
+### Gulp
 
 基于node平台开发的前端构建工具，将机械化操作编写成任务。
 
@@ -60,10 +58,7 @@ gulp.task('first', () => {
 - gulp-file-include：公共文件包含
 - browsersync：浏览器实时同步
 
-
-### 服务器端
-
-#### 创建web服务器
+### 创建web服务器
 
 ```
 // 引用系统模块
