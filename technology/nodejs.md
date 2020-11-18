@@ -1,5 +1,4 @@
 ### 模块的导出
-#### 模块的导出
 
 `exports.a = a` 与 `module.exports.a = a` 都指向同一个对象，
 `exports = {}` 无效，
