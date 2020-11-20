@@ -34,8 +34,10 @@
 图片alt就是显示在图片下面的文字，相当于对图片内容的解释。
 图片title是图片的标题，当鼠标移到图片上时显示的内容。title可加可不加
 示例：
-![Image text](./assets/星系.png "星系")
-<image src="./assets/星系.png" />
+<!-- ![Image text](./assets/星系.png "星系")
+<image src="./assets/星系.png" /> -->
+
+![text](./assets/星系.png)
 
 [超链接名](超链接地址 "超链接title")
 title可加可不加
