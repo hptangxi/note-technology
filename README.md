@@ -1,6 +1,5 @@
-# S Doc
+# 技术类笔记
 
-### 技术类
 
 [Markdown基本语法](./markdown.md)
 
