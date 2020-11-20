@@ -147,8 +147,8 @@ field|字段，文档中的属性名称，可以理解为JS的对象属性
 
 ```javascript
 mongoose.connect('mongodb://localhost/databaseName')
-        .then(() => console.log('数据库连接成功'))
-        .catch(err => console.log('数据库连接失败'), err)
+  .then(() => console.log('数据库连接成功'))
+  .catch(err => console.log('数据库连接失败'), err)
 ```
 
 **创建数据库：**
@@ -159,28 +159,34 @@ mongoose.connect('mongodb://localhost/databaseName')
 
 ```javascript
 // 创建集合规则
-const courseSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
   name: String,
-  author: String,
-  isPublished: Boolean
+  age: Number,
+  email: String,
+  password: String,
+  hobbies: [String]
 })
 // 使用规则创建集合
-const Course = mongoose.model('Course', courseSchema)
+const User = mongoose.model('User', userSchema)
 
 // 插入数据库的方法有两种
 // 方法一：
-const course = new Course({
-  name: 'node.js基础',
-  author: 'sylvia',
-  isPublished: true
+const user = new User({
+  name: 'Sylvia',
+  age: 30,
+  email: hptangxi@yeah.net,
+  password: '0123456789',
+  hobbies: ['music', 'coder', 'write']
 })
-course.save()
+user.save()
 
 // 方法二：
-Course.create({
-  name: 'node.js基础',
-  author: 'sylvia',
-  isPublished: true
+User.create({
+  name: 'Sylvia',
+  age: 30,
+  email: hptangxi@yeah.net,
+  password: '0123456789',
+  hobbies: ['music', 'coder', 'write']
 }).then(doc => {
   // 当前插入的文档
   console.log(doc)
@@ -198,5 +204,30 @@ Course.create({
 
 ```javascript
 // 根据条件查找文档（条件为空则查找全部文档）
-Course.find().then(res => console.log(res))
+User.find().then(res => {}) // 返回数组
+User.findOne({name: 'Sylvia'}) // 返回匹配的第一条数据
+
+// 匹配大于 小于
+User.find({age: {$gt: 20, $lt: 50}})
+
+// 匹配包含
+User.find({hobbies: {$in: ['coder']}})
+
+// 选择要查询的字段
+User.find().select('name email -_id') // 不包含_id
+
+// 将数据按照年龄排序
+User.find().sort('age') // 升序
+User.find().sort('-age') // 降序
+
+// skip 跳过多少条数据 limit 限制查询数量
+User.find().skip(2).limit(2)
+```
+
+**删除文档**
+
+```javascript
+// 删除单个
+User.findOneAndDelete({_id: 'XXX'}).then(res => {}) // 返回被删除的数据
+
 ```
