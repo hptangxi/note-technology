@@ -242,4 +242,6 @@ User.find().skip(2).limit(2)
 // 删除单个
 User.findOneAndDelete({_id: 'XXX'}).then(res => {}) // 返回被删除的文档
 
+// 删除多个
+User.deleteMany({})
 ```

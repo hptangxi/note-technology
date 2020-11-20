@@ -2,6 +2,6 @@
 
 ### 技术类
 
-[Markdown基本语法](./tech/markdown.md)
+[Markdown基本语法](./markdown.md)
 
-[Node.js](./tech/nodejs.md)
+[Node.js](./nodejs.md)
